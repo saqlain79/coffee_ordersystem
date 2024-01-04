@@ -209,7 +209,7 @@
 
 
     <!-- Reservation Start -->
-    <div class="container-fluid my-5">
+    <!-- <div class="container-fluid my-5">
         <div class="container">
             <div class="reservation position-relative overlay-top overlay-bottom">
                 <div class="row align-items-center">
@@ -269,7 +269,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Reservation End -->
 
 

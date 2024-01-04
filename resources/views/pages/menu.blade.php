@@ -31,7 +31,7 @@
                     
 
                     @foreach($products as $product)
-                    @if($product->type == 'Hot_Coffee')
+                    @if($product->type == 'hot' && $product->catagory == 'drinks')
                     <div class="row align-items-center mb-5">
                         <div class="col-4 col-sm-3">
                             <img class="w-100 rounded-circle mb-3 mb-sm-0" src="{{asset('img/'.$product->image)}}" alt="">
@@ -55,7 +55,58 @@
                     </div>
 
                     @foreach($products as $product)
-                    @if($product->type == 'Cold_Coffee')
+                    @if($product->type == 'cold' && $product->catagory == 'drinks')
+                    <div class="row align-items-center mb-5">
+                        <div class="col-4 col-sm-3">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="{{asset('img/'.$product->image)}}" alt="">
+                            @if($product->sale_price > 0)
+                            <h5 class="menu-price">${{$product->sale_price}}</h5>
+                            @else
+                            <h5 class="menu-price">${{$product->price}}</h5>
+                            @endif
+                        </div>
+                        <div class="col-8 col-sm-9">
+                            <h4><a href="{{route('single_product',$product->id)}}">{{$product->name}}</a></h4>
+                            <p class="m-0">{{$product->description}}</p>
+                        </div>
+                    </div>
+                    @endif
+                    @endforeach
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="text-center">
+                        <h1 class="mb-5">Cake</h1>
+                    </div>
+                    
+
+                    @foreach($products as $product)
+                    @if($product->type == 'hot' && $product->catagory == 'foods')
+                    <div class="row align-items-center mb-5">
+                        <div class="col-4 col-sm-3">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="{{asset('img/'.$product->image)}}" alt="">
+                            @if($product->sale_price > 0)
+                            <h5 class="menu-price">${{$product->sale_price}}</h5>
+                            @else
+                            <h5 class="menu-price">${{$product->price}}</h5>
+                            @endif
+                        </div>
+                        <div class="col-8 col-sm-9">
+                            <h4><a href="{{route('single_product',$product->id)}}">{{$product->name}}</a></h4>
+                            <p class="m-0">{{$product->description}}</p>
+                        </div>
+                    </div>
+                    @endif
+                    @endforeach
+                </div>
+                <div class="col-lg-6">
+                <div class="text-center">
+                        <h1 class="mb-5">Ice Cream</h1>
+                    </div>
+
+                    @foreach($products as $product)
+                    @if($product->type == 'cold' && $product->catagory == 'foods')
                     <div class="row align-items-center mb-5">
                         <div class="col-4 col-sm-3">
                             <img class="w-100 rounded-circle mb-3 mb-sm-0" src="{{asset('img/'.$product->image)}}" alt="">

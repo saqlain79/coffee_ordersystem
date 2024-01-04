@@ -39,16 +39,14 @@
             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 <div class="navbar-nav ml-auto p-4">
                     <a href="/" class="nav-item nav-link active">Home</a>
-                    <a href="/about" class="nav-item nav-link">About</a>
-                    <a href="service.html" class="nav-item nav-link">Service</a>
                     <a href="/menu" class="nav-item nav-link">Menu</a>
-                    <div class="nav-item dropdown">
+                    <!-- <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                         <div class="dropdown-menu text-capitalize">
                             <a href="reservation.html" class="dropdown-item">Reservation</a>
                             <a href="testimonial.html" class="dropdown-item">Testimonial</a>
                         </div>
-                    </div>
+                    </div> -->
                     @if(Auth::check())
                     @auth
                     <a href="{{route('cart')}}" class="nav-item nav-link">Cart</a>

@@ -20,9 +20,6 @@ use App\Http\Controllers\AdminController;
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
 route::get('/single_product/{id}', [HomeController::class, 'single_product'])->name('single_product');
-route::get('/about', function () {
-    return view('pages.about');
-})->name('about');
 route::get('/menu', [HomeController::class, 'menu'])->name('menu');
 
 //authentications
