@@ -11,15 +11,15 @@
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <h2 class="text-primary font-weight-medium m-0">We Have Been Serving</h2>
                         <h1 class="display-1 text-white m-0">COFFEE</h1>
-                        <h2 class="text-white m-0">* SINCE 1950 *</h2>
+                        <h2 class="text-white m-0">* SINCE 2023 *</h2>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img class="w-100" src="{{asset('img/carousel-2.jpg')}}" alt="Image">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <h2 class="text-primary font-weight-medium m-0">We Have Been Serving</h2>
-                        <h1 class="display-1 text-white m-0">COFFEE</h1>
-                        <h2 class="text-white m-0">* SINCE 1950 *</h2>
+                        <h2 class="text-primary font-weight-medium m-0">Along With Finest Desserts</h2>
+                        <h1 class="display-1 text-white m-0">Rich Cakes</h1>
+                        <h2 class="text-white m-0">* SINCE 2023 *</h2>
                     </div>
                 </div>
             </div>
@@ -39,7 +39,7 @@
         <div class="container">
             <div class="section-title">
                 <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">About Us</h4>
-                <h1 class="display-4">Serving Since 1950</h1>
+                <h1 class="display-4">Serving Since 2023</h1>
             </div>
             <div class="row">
                 <div class="col-lg-4 py-0 py-lg-5">
