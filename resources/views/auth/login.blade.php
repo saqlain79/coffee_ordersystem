@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Corona Admin</title>
+    <title>Project-Coffee</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{asset('admindashboard/vendors/mdi/css/materialdesignicons.min.css')}}">
     <link rel="stylesheet" href="{{asset('admindashboard/vendors/css/vendor.bundle.base.css')}}">
@@ -50,7 +50,7 @@
                     <button class="btn btn-facebook me-2 col">
                       <i class="mdi mdi-facebook"></i> Facebook </button>
                     <button class="btn btn-google col">
-                      <i class="mdi mdi-google-plus"></i> Google plus </button>
+                      <a href="{{route('google')}}"><i class="mdi mdi-google"></i> Google </button></a>
                   </div>
                   <p class="sign-up">Don't have an Account?<a href="{{route('register')}}"> Sign Up</a></p>
                 </form>

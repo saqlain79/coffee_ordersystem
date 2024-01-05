@@ -36,6 +36,8 @@ route::post('/loginpost', [AuthController::class, 'loginpost'])->name('loginpost
 route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 route::get('/register', [AuthController::class, 'register'])->name('register');
 route::post('/registerpost', [AuthController::class, 'registerpost'])->name('registerpost');
+route::get('/auth/google', [AuthController::class, 'google'])->name('google');
+route::get('/auth/google/callback', [AuthController::class, 'google_callback'])->name('google_callback');
 //authentications end
 
 route::middleware('auth')->group(function(){

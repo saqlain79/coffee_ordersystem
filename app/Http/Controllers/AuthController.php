@@ -10,7 +10,9 @@ use App\Models\User;
 use App\Models\Customer;
 use App\Models\Employee;
 
-
+use Illuminate\Support\Facades\Auth;
+use Laravel\Socialite\Facades\Socialite;
+use Exception;
 
 class AuthController extends Controller
 {
@@ -100,7 +102,7 @@ class AuthController extends Controller
             'password' => 'required|min:8|max:12',
         ]);
 
-        Auth::login($user);
+        Auth::login($user, true);
 
         return redirect()->route('index');
     }
@@ -135,7 +137,7 @@ class AuthController extends Controller
             'password' => 'required|min:8|max:12',
         ]);
 
-        Auth::login($user);
+        Auth::login($user, true);
 
         return redirect()->to(RouteServiceProvider::HOME);
     }
@@ -171,8 +173,56 @@ class AuthController extends Controller
             'password' => 'required|min:8|max:12',
         ]);
 
-        Auth::login($user);
+        Auth::login($user, true);
 
         return redirect()->to(RouteServiceProvider::HOME);
+    }
+
+    public function google()
+    {
+        return Socialite::driver('google')->redirect();
+    }
+
+    public function google_callback()
+    {
+        try
+        {
+            $user = Socialite::driver('google')->user();
+            $finduser = User::where('google_id', $user->id)->first();
+
+            if($finduser)
+            {
+                Auth::login($finduser);
+                return redirect()->route('index');
+            }
+            else
+            {
+                $newuser = new User();
+                $newuser->firstname = $user->name;
+                $newuser->email = $user->email;
+                $newuser->role = 'customer';
+                $newuser->address = 'abcd';
+                $newuser->contact = '123456789';
+                $newuser->nid = '123456789';
+                $newuser->password = Hash::make('12345678');
+                $newuser->save();
+                $newuser->google_id = $user->id;
+                $newuser->save();
+
+                $customer = new Customer();
+                $customer->cid = $newuser->id;
+                $customer->save();
+
+                Auth::login($newuser, true);
+                return redirect()->route('index');
+            }
+        }
+        catch(Exception $e)
+        {
+            dd($e->getMessage());
+            return redirect()->route('login');
+        }
+
+        
     }
 }

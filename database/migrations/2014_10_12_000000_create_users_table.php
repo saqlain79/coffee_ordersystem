@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('firstname', 20);
             $table->string('lastname', 20)->nullable();
             $table->string('email', 40)->unique();
+            $table->string('google_id', 40)->nullable();
             $table->string('address', 255);
             $table->unsignedBigInteger('nid')->unique();
             $table->unsignedBigInteger('contact');
