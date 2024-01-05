@@ -24,6 +24,9 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{{asset('css/style.min.css')}}" rel="stylesheet">
+
+    <!-- Leaflet CSS - For the map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
 
 <body>
